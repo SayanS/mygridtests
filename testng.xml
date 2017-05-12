@@ -2,9 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="ParallelTests" parallel="tests" thread-count="4">
 
+
     <test name="Test1" verbose="1" preserve-order="false">
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="LINUX"/>
+        <groups>
+            <run>
+                <include name="aaa"/>
+            </run>
+        </groups>
         <classes>
             <class name="FirstSuite"/>
         </classes>
@@ -18,4 +24,6 @@
         </classes>
     </test>
 
+
 </suite>
+

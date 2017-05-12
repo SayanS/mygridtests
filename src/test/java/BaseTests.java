@@ -12,7 +12,7 @@ import java.net.URL;
 public class BaseTests {
     private WebDriver webDriver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     @Parameters({"browserName", "platform"})
     public void setUp(String browserName, String platform) throws MalformedURLException {
             DesiredCapabilities cap = new DesiredCapabilities();
