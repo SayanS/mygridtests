@@ -8,14 +8,14 @@ import java.util.List;
 
 public class FirstSuite extends BaseTests {
 
-    @Test(groups={"bbb"})
+    @Test(groups = {"bbb"})
     public void firstTest() throws InterruptedException {
         getWebDriver().navigate().to("http://google.com");
         Thread.sleep(5000);
         System.out.println("First Suite - First test");
     }
 
-    @Test(groups={"bbb"})
+    @Test(groups = {"bbb"})
     public void secondTest() throws InterruptedException {
         getWebDriver().navigate().to("http://google.com");
 
@@ -24,20 +24,20 @@ public class FirstSuite extends BaseTests {
     }
 
 
-    @Test(groups={"aaa"}, dataProvider = "getSearchText", dataProviderClass = GoogleData.class, threadPoolSize = 6, invocationCount = 30)
+    @Test(groups = {"aaa"}, dataProvider = "getSearchText", dataProviderClass = GoogleData.class)
     public void thirdTest(String key, List<String> value) throws InterruptedException {
-        WebDriver wd=getWebDriver();
+        WebDriver wd = getWebDriver();
         wd.navigate().to("http://google.com");
-       wd.findElement(By.xpath(".//*[@id='lst-ib']")).sendKeys(key+" "+value.toString());
+        wd.findElement(By.xpath(".//*[@id='lst-ib']")).sendKeys(key + " " + value.toString());
         Thread.sleep(5000);
         wd.findElement(By.xpath(".//*[@id='lst-ib']")).clear();
         Thread.sleep(5000);
         System.out.println("First Suite - Third test");
     }
 
-    @Test(groups={"bbb"})
+    @Test(groups = {"bbb"})
     public void fifthTest() throws InterruptedException {
-       getWebDriver().navigate().to("http://google.com");
+        getWebDriver().navigate().to("http://google.com");
         Thread.sleep(5000);
         System.out.println("First Suite - Fourth test");
     }

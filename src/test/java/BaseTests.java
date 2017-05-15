@@ -1,5 +1,6 @@
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
@@ -15,6 +16,7 @@ public class BaseTests {
     @BeforeClass(alwaysRun = true)
     @Parameters({"browserName", "platform"})
     public void setUp(String browserName, String platform) throws MalformedURLException {
+            //System.setProperty("webdriver.gecko.driver","/usr/local/share/geckodriver.sh");
             DesiredCapabilities cap = new DesiredCapabilities();
             cap.setBrowserName(browserName);
             cap.setPlatform(Platform.extractFromSysProperty(platform));

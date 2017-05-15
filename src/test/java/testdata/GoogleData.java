@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class GoogleData {
     @DataProvider(name="getSearchText", parallel = true)
     public static Object[][] getSearchText(){
-     return new Object[][]{{"Key1", Arrays.asList("Something_1","Something_2")},
-                           {"Key2",Arrays.asList("Something_3","Something_4")}};
+     return new Object[][]{{"Key1", Arrays.asList("Something_1","Something_2")}};
     }
 }
